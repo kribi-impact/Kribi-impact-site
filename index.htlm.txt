@@ -1,0 +1,30 @@
+Voici le *code HTML* de la page d’accueil bilingue de *Kribi Impact Maritime*, prêt à utiliser. Tu peux le copier dans un fichier nommé `index.html` :
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kribi Impact Maritime</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f7fa; }
+    header { background: #003366; color: white; padding: 20px; text-align: center; }
+    nav { background: #005599; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    section { padding: 40px 20px; }
+    .logo { width: 120px; margin: 10px auto; display: block; }
+    .btn { background: #003366; color: white; padding: 10px 20px; border: none; text-decoration: none; font-weight: bold; }
+    footer { background: #003366; color: white; text-align: center; padding: 15px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo-kribi-impact.png" alt="Logo Kribi Impact Maritime" class="logo" />
+  <h1>Kribi Impact Maritime</h1>
+  <p id="slogan">L'impact qui équipe votre entreprise.</p>
+</header>
+
+<nav>
+  <a href="#about" id="nav-about">À propos</a>
