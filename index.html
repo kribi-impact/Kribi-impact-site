@@ -5,74 +5,64 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kribi Impact Maritime</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #005599;
-      padding: 10px 0;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      background-color: white;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-    img.logo {
-      display: block;
-      margin: 20px auto;
-      max-width: 200px;
-    }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; color:#333; }
+    header, footer { background:#003366; color:#fff; text-align:center; padding:20px; }
+    nav { background:#005599; text-align:center; padding:10px 0; }
+    nav a, nav button { color:#fff; margin:0 10px; font-weight:bold; background:none; border:none; cursor:pointer; font-size:16px; }
+    section { padding:40px 20px; text-align:center; }
+    img.logo { max-width:200px; margin:0 auto; display:block; }
+    nav button.active { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Logo de Kribi Impact Maritime" class="logo" />
-
   <header>
+    <img src="logo.png" alt="Logo Kribi Impact Maritime" class="logo" />
     <h1>Kribi Impact Maritime</h1>
   </header>
-
   <nav>
-    <a href="#">Accueil</a>
-[28/07, 05:15] Tchatgpt: <a href="#">À propos</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-  </nav>
-
-  <section>
-    <h2>Bienvenue</h2>
-    <p>Bienvenue sur le site officiel de Kribi Impact Maritime. Nous sommes spécialisés dans les services maritimes à Kribi et au Cameroun.</p>
+    <a href="#accueil">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <button id="frBtn" class="active" onclick="setLang('fr')">FR</button>
+    <button id="enBtn" onclick="setLang('en')">EN</button>
+[28/07, 06:38] Tchatgpt: </nav>
+  <section id="content">
+    <h2 id="title">Bienvenue</h2>
+    <p id="description">
+      Bienvenue sur le site officiel de Kribi Impact Maritime. Nous proposons du mobilier de bureau (tables de réception, chaises de bureau, etc.), des véhicules pour entreprises, ainsi qu’une assistance à l’achat et des services d’aménagement liés.
+    </p>
   </section>
-
   <footer>
-    <p>&copy; 2025 Kribi Impact Maritime. Tous droits réservés.</p>
+    © 2025 Kribi Impact Maritime. Tous droits réservés.
   </footer>
+
+  <script>
+    const texts = {
+      fr: {
+        title: "Bienvenue",
+        description: "Bienvenue sur le site officiel de Kribi Impact Maritime. Nous proposons du mobilier de bureau (tables de réception, chaises de bureau, etc.), des véhicules pour entreprises, ainsi qu’une assistance à l’achat et des services d’aménagement liés.",
+        footer: "© 2025 Kribi Impact Maritime. Tous droits réservés."
+      },
+      en: {
+        title: "Welcome",
+        description: "Welcome to the official website of Kribi Impact Maritime. We provide office furniture (reception tables, office chairs, etc.), company vehicles, as well as purchase assistance and related fit-out services.",
+        footer: "© 2025 Kribi Impact Maritime. All rights reserved."
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+[28/07, 06:39] Tchatgpt: document.getElementById('title').textContent = texts[lang].title;
+      document.getElementById('description').textContent = texts[lang].description;
+      document.querySelector('footer').textContent = texts[lang].footer;
+      document.getElementById('frBtn').classList.toggle('active', lang === 'fr');
+      document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+    }
+  </script>
 </body>
 </html>
 ```
